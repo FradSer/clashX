@@ -11,11 +11,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Dreamacro/clash/config"
-	"github.com/Dreamacro/clash/constant"
-	"github.com/Dreamacro/clash/hub/executor"
-	"github.com/Dreamacro/clash/hub/route"
-	"github.com/Dreamacro/clash/log"
+	"github.com/brobird/clash/config"
+	"github.com/brobird/clash/constant"
+	"github.com/brobird/clash/hub/executor"
+	"github.com/brobird/clash/hub/route"
+	"github.com/brobird/clash/log"
 	"github.com/oschwald/geoip2-golang"
 	"github.com/phayes/freeport"
 )
@@ -65,7 +65,6 @@ func readConfig(path string) ([]byte, error) {
 	}
 	return data, err
 }
-
 
 func parseDefaultConfigThenStart(checkPort, allowLan bool) (*config.Config, error) {
 	buf, err := readConfig(constant.Path.Config())

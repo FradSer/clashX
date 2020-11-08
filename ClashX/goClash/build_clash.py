@@ -3,6 +3,7 @@ import datetime
 import plistlib
 import os
 
+
 def get_version():
     with open('./go.mod') as file:
         for line in file.readlines():
@@ -16,8 +17,8 @@ def build_clash(version):
     command = f"""CGO_CFLAGS=-mmacosx-version-min=10.12 \
 CGO_LDFLAGS=-mmacosx-version-min=10.12 \
 GOBUILD=CGO_ENABLED=0 \
-go build -ldflags '-X "github.com/Dreamacro/clash/constant.Version={version}" \
--X "github.com/Dreamacro/clash/constant.BuildTime={build_time}"' \
+go build -ldflags '-X "github.com/BROBIRD/clash/constant.Version={version}" \
+-X "github.com/BROBIRD/clash/constant.BuildTime={build_time}"' \
 -buildmode=c-archive -o goClash.a """
     subprocess.check_output(command, shell=True)
 
